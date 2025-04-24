@@ -4,11 +4,13 @@ import { RouterOutlet } from '@angular/router';
 import { NavComponent } from "./nav/nav.component";
 import { AccountService } from './_services/account.service';
 import { HomeComponent } from "./home/home.component";
+import { ToastrModule } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgFor, CommonModule, NavComponent, HomeComponent],
+  imports: [RouterOutlet, CommonModule, NavComponent, HomeComponent, ToastrModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -30,7 +32,6 @@ export class AppComponent implements OnInit{
       this.accountservice.currentUser.set(user);
     }
   
-
  
 }
 
